@@ -1,6 +1,5 @@
 package com.driven.carsapi.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ import com.driven.carsapi.repository.CarRepository;
 
 @RestController
 public class CarsController {
-
-    //List<CarDTO> cars = new ArrayList<>();
     
     @Autowired
     private CarRepository repository;
@@ -31,7 +28,6 @@ public class CarsController {
     @PostMapping("/cars/insert")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void create(@RequestBody CarDTO req) {
-        //cars.add(req);
         repository.save(new Car(req));
     }
 }
